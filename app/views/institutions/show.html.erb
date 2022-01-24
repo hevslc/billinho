@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @institution %>
+
+<div>
+  <%= link_to "Editar", edit_institution_path(@institution) %> |
+  <%= link_to "Voltar", institutions_path %>
+
+  <%= button_to "Deletar", @institution, method: :delete %>
+</div>

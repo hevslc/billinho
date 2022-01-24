@@ -1,0 +1,32 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Faturas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Aluno</th>
+      <th>Valor da fatura</th>
+      <th>Data de vencimento</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @invoices.each do |invoice| %>
+      <tr>
+        <td><%= invoice.enrollment.student.name %></td>
+        <td><%= invoice.value %></td>
+        <td><%= invoice.due_date %></td>
+        <td><%= invoice.status %></td>
+        <td><%= link_to "Mostrar", invoice %></td>
+        <td><%= link_to "Editar", edit_enrollment_path(invoice) %></td>
+        <td><%= link_to "Deletar", invoice, method: :delete, data: {confirm: 'Tem certeza?'} %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+
+
+
+<%= link_to "Nova fatura", new_invoice_path %>

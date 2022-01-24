@@ -11,6 +11,12 @@
   </head>
 
   <body>
+  <div id="menu">
+    <%= link_to "IES", institutions_path %>
+    <%= link_to "Matrículas", institutions_path %>
+    <%= link_to "Faturas", institutions_path %>
+    <%= link_to "Alunos", institutions_path %>
+  </div>
     <%= yield %>
   </body>
 </html>

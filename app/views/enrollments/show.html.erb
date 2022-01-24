@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+  Aluno: <%= @enrollment.student.name %><br>
+  IES: <%= @enrollment.institution.name %><br>
+  Curso: <%= @enrollment.course %><br>
+  Valor total: <%= @enrollment.total_value %><br>
+  Quantidade de faturas: <%= @enrollment.n_invoice %><br>
+  Data de vencimento da fatura: <%= @enrollment.due_day %><br>
+
+  <br><br>
+  
+  <%= button_to "Editar", edit_enrollment_path(@enrollment) %>
+  <%= button_to "Deletar", @enrollment, method: :delete, data: {confirm: 'Tem certeza?'}  %>
+
+  <br><br>
+  
+<%= link_to "Voltar", institutions_path %>

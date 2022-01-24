@@ -1,0 +1,31 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Instituições de Ensino</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>CNPJ</th>
+      <th>Tipo</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @institutions.each do |institution| %>
+      <tr>
+        <td><%= institution.name %></td>
+        <td><%= institution.cnpj %></td>
+        <td><%= institution.ies_type %></td>
+        <td><%= link_to "Mostrar", institution %></td>
+        <td><%= link_to "Editar", edit_institution_path(institution) %></td>
+        <td><%= link_to "Deletar", institution, method: :delete, data: {confirm: 'Tem certeza?'} %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= link_to "Nova IES", new_institution_path %>

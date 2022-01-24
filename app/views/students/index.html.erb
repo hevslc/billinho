@@ -1,0 +1,35 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Alunos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>CPF</th>
+      <th>Data de Nascimento</th>
+      <th>Telefone</th>
+      <th>Gênero</th>
+      <th>Meio de Pagamento</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.cpf %></td>
+        <td><%= student.birth_date %></td>
+        <td><%= student.cell %></td>
+        <td><%= student.gender %></td>
+        <td><%= student.type_payment %></td>
+        <td><%= link_to "Mostrar", student %></td>
+        <td><%= link_to "Editar", edit_student_path(student) %></td>
+        <td><%= link_to "Deletar", student, method: :delete, data: {confirm: 'Tem certeza?'} %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to "New student", new_student_path %>
