@@ -19,6 +19,8 @@ class EnrollmentsController < ApplicationController
   def edit
   end
 
+
+
   # POST /enrollments or /enrollments.json
   def create
     @enrollment = Enrollment.new(enrollment_params)
@@ -69,7 +71,7 @@ class EnrollmentsController < ApplicationController
     end
 
     def prof
-      @student = Student.find(params[:id])
-      @institution = Institution.find(params[:id])
+      @student = Student.find(enrollment_params[:student_id])
+      @institution = Institution.find(enrollment_params[:institution_id])
     end
 end
