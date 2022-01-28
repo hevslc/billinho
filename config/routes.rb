@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/billinho', as: 'rails_admin'
   resources :students
   resources :enrollments
   resources :invoices
